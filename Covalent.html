@@ -4,13 +4,20 @@
 <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
 <script src="https://johnaloomis.github.io/CovalentAR/aframe/build/aframe-ar.js"></script>
 <script>
+function myFunction(evt) {
+    window.location.replace("https://www.current.agency/");
+}
+
 AFRAME.registerComponent('marker', {
     init: function () {
         const redirect = document.getElementById("model");
+        if (redirect.removeEventListener) {                   // For all major browsers, except IE 8 and earlier
+            redirect.removeEventListener("click", myFunction);
+        } else if (redirect.detachEvent) {                    // For IE 8 and earlier versions
+            redirect.detachEvent("click", myFunction);
+        }
 
-        redirect.addEventListener('click', function (evt) {
-            window.location.replace("https://www.current.agency/");
-        })
+        redirect.addEventListener('click', myFunction);
 
     }
 });
