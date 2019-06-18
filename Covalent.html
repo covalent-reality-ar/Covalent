@@ -6,9 +6,7 @@
 <script>
 AFRAME.registerComponent('marker', {
     init: function () {
-        const redirect = document.getElementById("Logo");
-
-
+        const redirect = document.getElementById("#Logo");
 
         redirect.addEventListener('click', function (evt) {
             window.location.replace("https://covalentreality.co/");
@@ -25,8 +23,11 @@ AFRAME.registerComponent('marker', {
 		<a-assets>
 			<a-asset-item id="Logo" src="models/CovalentLogo/Covalentlogo.gltf"></a-asset-item>
 		</a-assets>
-        <a-marker  marker emitevents="true" cursor="rayOrigin: mouse" preset='pattern' type='pattern' url="markers/Covalent/pattern-marker.patt">
-			<a-entity gltf-model="#Logo" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+    <a-marker  marker emitevents="true" cursor="rayOrigin: mouse" preset='pattern' type='pattern' url="markers/Covalent/pattern-marker.patt">
+
+
+
+      <a-entity gltf-model="#Logo" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
 
 			</a-entity>
 
