@@ -7,7 +7,7 @@
 AFRAME.registerComponent('marker', {
     init: function () {
         const redirect = document.getElementById("model");
-        redirect.onclick = null;
+        redirect.click = null;
 
         redirect.addEventListener('click', function (evt) {
             window.location.replace("https://www.current.agency/");
